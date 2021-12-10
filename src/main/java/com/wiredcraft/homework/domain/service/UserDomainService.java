@@ -23,4 +23,8 @@ public class UserDomainService {
         user.updateWith(userDto);
         userRepository.save(user);
     }
+
+    public void delete(Long id) {
+        userRepository.delete(id);
+    }
 }

@@ -27,4 +27,10 @@ public class UserApplicationService {
         UserDto userDto = command.toDto();
         userDomainService.update(id, userDto);
     }
+
+    // FIXME: add distributed lock with id to avoid update lost
+    @Transactional
+    public void delete(Long id) {
+        userDomainService.delete(id);
+    }
 }
