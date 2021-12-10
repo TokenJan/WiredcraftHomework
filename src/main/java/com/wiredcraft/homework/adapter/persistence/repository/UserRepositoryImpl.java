@@ -7,6 +7,8 @@ import com.wiredcraft.homework.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
@@ -17,5 +19,10 @@ public class UserRepositoryImpl implements UserRepository {
     public User save(User user) {
         UserPo userPo = UserPo.fromDomain(user);
         return userJpaRepository.save(userPo).toDomain();
+    }
+
+    @Override
+    public Optional<User> findById(Long id) {
+        return userJpaRepository.findById(id).map(UserPo::toDomain);
     }
 }

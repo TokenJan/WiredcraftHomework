@@ -1,5 +1,6 @@
 package com.wiredcraft.homework.domain.model;
 
+import com.wiredcraft.homework.domain.dto.UserDto;
 import com.wiredcraft.homework.domain.valueobject.UserId;
 import lombok.Getter;
 
@@ -39,4 +40,10 @@ public class User {
     }
 
 
+    public void updateWith(UserDto userDto) {
+        this.name = userDto.getName();
+        this.dob = userDto.getDateOfBirth();
+        this.address = userDto.getAddress();
+        this.description = userDto.getDescription();
+    }
 }

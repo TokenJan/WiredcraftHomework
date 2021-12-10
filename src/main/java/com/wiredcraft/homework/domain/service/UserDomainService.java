@@ -1,7 +1,9 @@
 package com.wiredcraft.homework.domain.service;
 
+import com.wiredcraft.homework.domain.dto.UserDto;
 import com.wiredcraft.homework.domain.model.User;
 import com.wiredcraft.homework.domain.repository.UserRepository;
+import com.wiredcraft.homework.exception.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,12 @@ public class UserDomainService {
 
     public User create(User user) {
         return userRepository.save(user);
+    }
+
+    public void update(Long id, UserDto userDto) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("user with id: [%d] not found", id)));
+        user.updateWith(userDto);
+        userRepository.save(user);
     }
 }

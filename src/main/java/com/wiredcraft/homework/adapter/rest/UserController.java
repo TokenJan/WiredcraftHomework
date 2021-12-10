@@ -4,7 +4,9 @@ import com.wiredcraft.homework.application.service.UserApplicationService;
 import com.wiredcraft.homework.common.CommonResponse;
 import com.wiredcraft.homework.domain.model.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +26,10 @@ public class UserController {
         CreateUserResponse response = CreateUserResponse.from(user);
         return CommonResponse.withData(response);
     }
+
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id, @RequestBody UpdateUserCommand command) {
+        userApplicationService.update(id, command);
+    }
+
 }
