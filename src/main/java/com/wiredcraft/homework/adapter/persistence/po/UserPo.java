@@ -1,6 +1,7 @@
 package com.wiredcraft.homework.adapter.persistence.po;
 
 import com.wiredcraft.homework.domain.model.User;
+import com.wiredcraft.homework.domain.valueobject.UserId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +19,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Data
 @Builder
@@ -49,7 +51,11 @@ public class UserPo {
 
 
     public static UserPo fromDomain(User user) {
+        Long id = Optional.ofNullable(user.getId())
+                .map(UserId::getId)
+                .orElse(null);
         return UserPo.builder()
+                .id(id)
                 .name(user.getName())
                 .dateOfBirth(user.getDob())
                 .address(user.getAddress())
