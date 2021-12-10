@@ -5,6 +5,7 @@ import com.wiredcraft.homework.common.CommonResponse;
 import com.wiredcraft.homework.domain.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,6 +39,11 @@ public class UserController {
         userApplicationService.delete(id);
     }
 
-
+    @GetMapping("/{id}")
+    public CommonResponse<QueryUserResponse> query(@PathVariable Long id) {
+        User user = userApplicationService.query(id);
+        QueryUserResponse response = QueryUserResponse.from(user);
+        return CommonResponse.withData(response);
+    }
 
 }

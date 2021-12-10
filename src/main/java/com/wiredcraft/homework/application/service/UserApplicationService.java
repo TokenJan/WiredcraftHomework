@@ -1,6 +1,7 @@
 package com.wiredcraft.homework.application.service;
 
 import com.wiredcraft.homework.adapter.rest.CreateUserCommand;
+import com.wiredcraft.homework.adapter.rest.QueryUserResponse;
 import com.wiredcraft.homework.adapter.rest.UpdateUserCommand;
 import com.wiredcraft.homework.domain.dto.UserDto;
 import com.wiredcraft.homework.domain.model.User;
@@ -32,5 +33,10 @@ public class UserApplicationService {
     @Transactional
     public void delete(Long id) {
         userDomainService.delete(id);
+    }
+
+    @Transactional(readOnly = true)
+    public User query(Long id) {
+        return userDomainService.query(id);
     }
 }
