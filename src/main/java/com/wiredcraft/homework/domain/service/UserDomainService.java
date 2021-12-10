@@ -1,6 +1,5 @@
 package com.wiredcraft.homework.domain.service;
 
-import com.wiredcraft.homework.adapter.rest.QueryUserResponse;
 import com.wiredcraft.homework.domain.dto.UserDto;
 import com.wiredcraft.homework.domain.model.User;
 import com.wiredcraft.homework.domain.repository.UserRepository;
