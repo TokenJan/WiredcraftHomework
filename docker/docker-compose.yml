@@ -1,0 +1,13 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql:8.0.18
+    container_name: wiredcraft-mysql
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 23306:3306
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=123456
+    command: ['mysqld', '--character-set-server=utf8mb4']

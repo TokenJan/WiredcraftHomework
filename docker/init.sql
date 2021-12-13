@@ -1,0 +1,1 @@
+CREATE DATABASE `wiredcraft` CHARACTER SET utf8mb4;
