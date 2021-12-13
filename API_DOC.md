@@ -13,7 +13,7 @@
     ```
 
   parameters				    |type		|required   |sample
-      :----						|:---		|:------    |:------	
+  :----						|:---		|:------    |:------	
   name						|string		|Required	|Jack
   address					    |string		|Optional	|Shanghai
   description				    |string		|Optional	|this is description
@@ -28,7 +28,7 @@
     }
     ```
   parameters				    |type	        |sample
-        :----						|:---	        |:------
+  :----						|:---	        |:------
   id                          |Long           |1
 
 ## update user
