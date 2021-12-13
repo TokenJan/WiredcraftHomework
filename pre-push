@@ -1,0 +1,11 @@
+#!/bin/sh
+set -x
+
+# run the tests with the maven wrapper
+./mvnw clean verify
+
+# store the last exit code in a variable
+RESULT=$?
+
+# return the './mvnw build' exit code
+exit $RESULT
