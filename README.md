@@ -1,5 +1,9 @@
 # Wiredcraft Homework
-This demo project provides CRUD on User domain and follows the hexagonal architecture.  
+This demo project provides CRUD on the user domain and follows the hexagonal architecture.
+
+key points:
+- User is a rich domain model with domain-specific methods encapsulated
+- Strict dependency relationship e.g. adapter -> application -> domain
 
 ## Tech Stack
 * Java 11
