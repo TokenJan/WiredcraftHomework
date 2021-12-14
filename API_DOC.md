@@ -80,7 +80,7 @@
     ```
 
     parameters				    |type	        |sample
-      :----						|:---	        |:------
+    :----						|:---	        |:------
     id                          |Long           |1
     name						|string	    	|Jack
     address					    |string	    	|Shanghai
