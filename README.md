@@ -25,11 +25,11 @@ Strict dependency relationship:
 ```
 
 ## Test Strategy
-1. E2E test (QA)
-2. Integration Test (Dev)
-    1. Contract Test
-    2. DB Test
-3. Unit Test (Dev)
+1. E2E test: QA integrates E2E tests with pipeline
+2. Integration Test
+    1. Contract Test: Pact Test Framework
+    2. DB Test: use embedded H2 database to run the DB test
+3. Unit Test: Spock Test Framework with groovy
     1. Application Service Layer Test
     2. Domain Service Layer Test
     3. Domain Model Test
