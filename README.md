@@ -58,32 +58,36 @@ this `setup.sh` script contains following steps:
     ```
 
 ## Code Convention
-1. Git convention 
-   - config username: use Lastname Firstname
-   - config email: use company email
+1. Git convention
+    - config username: use Lastname Firstname
+    - config email: use company email
     ```
     git config --global user.name 'xxx'
     git config --global user.email 'xxx@xxx.com'
     ```
-   - git commit convention: use `[XXX-{ticket number}]` as the prefix of the commit message 
-      - valid: [XXX-100] add create order api with tests
-      - invalid(no ticket number): [TECH] add strategy time series
-      - invalid(meaningless message): [XXX-100] update
-   - adopt trunk-based development strategy: use `git pull --rebase` to pull the code from the remote
+    - git commit convention: use `[XXX-{ticket number}]` as the prefix of the commit message 
+        - valid: [XXX-100] add create order api with tests
+        - invalid(no ticket number): [TECH] add strategy time series
+        - invalid(meaningless message): [XXX-100] update
+    - adopt trunk-based development strategy: use `git pull --rebase` to pull the code from the remote
+    - branch type:
+        - master
+        - release
+    
 2. Database convention
-   - migration scripts location: `application/src/main/resources/db/migration`
-   - migration script name convention: `Vyyyymmddhhmm_description.sql`
-   - table name should keep singular: e.g. `task`
+    - migration scripts location: `application/src/main/resources/db/migration`
+    - migration script name convention: `Vyyyymmddhhmm_description.sql`
+    - table name should keep singular: e.g. `task`
 3. API design convention
-   - follow RESTful api design
-   - use `GET`, `POST`, `PUT`, `DELETE` HTTP method
-   - use plural to locate the specific resource 
-     - valid: GET /users/1
-     - valid: POST /users
-     - valid: PUT /users/1
-     - valid: DELETE /users/1
-     - invalid: POST /users/create
-     - invalid: POST /users/1/delete
+    - follow RESTful api design
+    - use `GET`, `POST`, `PUT`, `DELETE` HTTP method
+    - use plural to locate the specific resource
+        - valid: GET /users/1
+        - valid: POST /users
+        - valid: PUT /users/1
+        - valid: DELETE /users/1
+        - invalid: POST /users/create
+        - invalid: POST /users/1/delete
 
 ## API Document
 See [API DOC](https://github.com/TokenJan/WiredcraftHomework/blob/main/API_DOC.md)
